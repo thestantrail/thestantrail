@@ -1,46 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Stan Trail: A Compass for the Soul</title>
-  <meta name="description" content="Unearthing the root of the story across continents and seas." />
-    <link rel="stylesheet" href="/styles.css?v=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Stan Trail: A Compass for the Soul</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/custom-fonts.css"> 
 </head>
-<body>
 
-    <section class="hero-section">
-        
-        <header class="header-home"> 
-            <div class="container">
-                <a class="brand-home" href="/">● The Stan Trail</a>
-                <nav class="nav-home">
-                    <a href="/">Home</a>
-                    <a href="/trips.html">Trips</a>
-                </nav>
+<body data-bs-theme="dark" class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container-fluid container">
+            <a class="navbar-brand text-info fw-bold" href="/">● The Stan Trail</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trips.html">Trips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                </ul>
             </div>
-        </header>
-
-        <div class="hero-content">
-            <h1 class="hero-tagline">A compass for the soul, not just the feet.</h1>
-            <a href="/trips.html" class="cta-button">Explore The Latest Dispatch</a>
         </div>
-    </section>
+    </nav>
 
-    <section class="featured-trip-section">
-        <div class="content-card">
-            <p class="section-title">LATEST CHRONICLE</p>
-            <h2 class="trip-title">Caribbean Cruise — Feb 7–16, 2025</h2>
-            <p class="trip-description">Day-by-day highlights from Puerto Rico to Barbados. Where every arrival is an education.</p>
-            <a href="trips/caribbean-cruise-feb-2025.html" class="trip-button">View Full Chronicle</a>
+    <main class="container my-5">
+        
+        <div class="text-center py-5">
+            <h1 class="display-3 fw-bold text-white">A compass for the soul, not just the feet.</h1>
+            <p class="lead text-light opacity-75 mb-4">Unearthing the root of the story across continents and seas.</p>
+            <a href="/trips.html" class="btn btn-primary btn-lg shadow-sm">Explore The Latest Dispatch</a>
         </div>
-    </section>
+        
+        <section class="row justify-content-center my-5">
+            <div class="col-md-8">
+                <div class="card p-4 shadow-lg border-0 bg-secondary-subtle">
+                    <div class="card-body text-center">
+                        <p class="text-info fw-bold mb-1">LATEST CHRONICLE</p>
+                        <h2 class="card-title text-white">Caribbean Cruise — Feb 7–16, 2025</h2>
+                        <p class="card-text text-light opacity-75">Day-by-day highlights from Puerto Rico to Barbados. Where every arrival is an education.</p>
+                        <a href="trips/caribbean-cruise-feb-2025.html" class="btn btn-info mt-3">View Full Chronicle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small>© <span id="y"></span> The Stan Trail</small>
-      </div>
-    </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </main>
+    
+    <footer class="bg-dark py-3 mt-5 border-top border-secondary">
+        <div class="container text-center text-muted">
+            <small>© <span id="y"></span> The Stan Trail. Traverse the world.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
