@@ -6,7 +6,7 @@
     /* Lighter, modern blue palette */
     --primary-color: #3f51b5; /* Medium Blue/Indigo */
     --secondary-color: #64b5f6; /* Lighter Sky Blue Accent */
-    --text-color: #37474f; /* Dark Slate Gray */
+    --text-color: white; /* Main text is white */
     --muted-color: #78909c;
     --light-bg: #f7f9fc; /* Very light background for pages */
     --card-bg: white;
