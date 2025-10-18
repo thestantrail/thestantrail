@@ -1,5 +1,6 @@
-/* Custom Fonts: Inter for clean data, Playfair for headings (matches homepage style) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap');
+/* Import Fonts: Montserrat (for bold/clean) & Playfair Display (for elegant titles) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); /* For the log tables */
 
 :root {
     --primary-color: #0077b6; /* Deep Ocean Blue */
@@ -9,56 +10,48 @@
     --light-bg: #f5f7fa;
     --card-bg: white;
     --border-color: #e9ecef;
+    --dark-overlay: rgba(0, 0, 0, 0.45);
 }
 
-/* Base and Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: 'Inter', sans-serif; /* Cleaner font for reading logs */
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     background-color: var(--light-bg);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
-.bg {
-    /* Ensures the background covers the whole page */
-    background-color: var(--light-bg);
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Site Header */
-.site-header {
-    background-color: var(--primary-color);
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.site-header .container {
+/* -------------------- HOME PAGE: HEADER & NAV -------------------- */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    position: absolute; 
+    width: 100%;
+    z-index: 1000;
+    color: white; 
+    background: transparent; /* Transparent header over the hero */
 }
 
-.brand {
-    color: white;
-    text-decoration: none;
+.logo {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-}
-
-.brand::first-letter {
-    color: var(--secondary-color);
 }
 
 .nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
     transition: color 0.3s;
 }
 
@@ -66,97 +59,149 @@ body {
     color: var(--secondary-color);
 }
 
-/* Breadcrumb */
-.breadcrumb {
-    padding: 1.5rem 0 0.5rem 0;
-    font-size: 0.85rem;
-    color: var(--muted-color);
+/* -------------------- HOME PAGE: HERO SECTION -------------------- */
+.hero-section {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* REMEMBER TO CHANGE 'your-hero-image.jpg' */
+    background: var(--dark-overlay), url('your-hero-image.jpg') center/cover no-repeat; 
+    background-color: var(--primary-color); /* Fallback color */
 }
 
-.breadcrumb a {
-    color: var(--primary-color);
-    text-decoration: none;
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-overlay);
+    z-index: 1;
 }
 
-/* Card Styling (Applies to the whole page content) */
-.card {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
-/* Typography & Titles */
-h1 {
+.hero-tagline {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
+    font-size: 3.5rem; 
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* -------------------- FEATURED SECTION (Card on Homepage) -------------------- */
+.featured-trip-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.content-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
     margin-bottom: 10px;
-    line-height: 1.2;
+}
+
+.trip-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.trip-description {
+    font-family: serif;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #6c757d;
+}
+
+.trip-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+/* -------------------- TRIP PAGE: LOG SPECIFIC STYLES -------------------- */
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Use elegant font for titles */
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
-    color: var(--primary-color); /* Highlight the day headers */
-    margin-top: 0;
-    margin-bottom: 15px;
+    color: var(--primary-color);
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 8px;
 }
 
-.muted {
-    color: var(--muted-color);
-    font-size: 1rem;
-}
-
-/* Itinerary Summary Block (New Feature) */
-.itinerary-summary {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px dashed var(--border-color);
-}
-
-.summary-item {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    background-color: var(--light-bg);
-    color: var(--primary-color);
-    padding: 5px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--primary-color);
-}
-
-
-/* Data Table Styling (The Log) */
 .log {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif; /* Cleaner font for data */
 }
 
 .log thead th {
     background-color: var(--light-bg);
-    color: var(--text-color);
     padding: 12px 10px;
-    text-align: left;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
 }
 
 .log tbody tr {
     border-bottom: 1px solid var(--border-color);
-}
-
-.log tbody tr:last-child {
-    border-bottom: none;
 }
 
 .log tbody td {
@@ -164,26 +209,17 @@ h2 {
     vertical-align: top;
 }
 
-.log tbody tr:nth-child(even) {
-    background-color: #fcfcfc; /* Subtle striping for readability */
-}
-
-/* Highlight 'Arrived' and 'Departed' notes */
-.log tbody tr td:last-child {
-    font-style: italic;
-}
-
 .log tbody tr td:first-child {
-    font-weight: 600; /* Bold the timestamps */
+    font-weight: 600;
     color: var(--primary-color);
 }
 
-
-/* Footer */
-.site-footer {
-    background-color: #343a40;
-    color: #bdbdbd;
-    padding: 20px 0;
-    margin-top: 40px;
+/* -------------------- FOOTER -------------------- */
+.footer {
+    padding: 20px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #999;
+    background-color: #343a40;
 }
