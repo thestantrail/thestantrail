@@ -1,42 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Stan Trail: A Compass for the Soul</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Stan Trail: A Compass for the Soul</title>
+  <meta name="description" content="Unearthing the root of the story across continents and seas." />
+    <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <span class="dot"></span> The Stan Trail
-        </div>
-        <nav class="nav">
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Trips</a>          
-        </nav>
-    </header>
-    
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">● The Stan Trail</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/trips.html">Trips</a>
+                  </nav>
+      </div>
+    </header>
+
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-tagline">A compass for the soul, not just the feet.</h1>
             <p class="hero-subtitle">Unearthing the root of the story across continents and seas.</p>
+            <a href="/trips.html" class="cta-button">Explore The Latest Dispatch</a>
         </div>
     </section>
-    
+
     <section class="featured-trip-section">
         <div class="content-card">
-            <h2 class="section-title">Latest Chronicle</h2>
-            <h3 class="trip-title">Caribbean Cruise — Feb 7-16, 2025</h3>
-            <p class="trip-description">Day-by-day highlights from Puerto Rico to Barbados. 
-            <a href="trips/caribbean-cruise-feb-2025.html" class="trip-button">See The Journey</a>
+            <p class="section-title">Latest Chronicle</p>
+            <h2 class="trip-title">Caribbean Cruise — Feb 7–16, 2025</h2>
+            <p class="trip-description">Day-by-day highlights from Puerto Rico to Barbados. Where every arrival is an education.</p>
+            <a href="trips/caribbean-cruise-feb-2025.html" class="trip-button">View Full Chronicle</a>
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2025 The Stan Trail. Traverse the world.</p>
-    </footer>
-
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="y"></span> The Stan Trail</small>
+      </div>
+    </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
