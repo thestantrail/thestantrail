@@ -1,36 +1,17 @@
-/* =======================================
-   GLOBAL & HEADER (Used on Trip Pages)
-   ======================================= */
-.site-header {
-    background-color: var(--primary-color);
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Update the color variables for a lighter palette */
+:root {
+    --primary-color: #3f51b5; /* Medium Blue/Indigo */
+    --secondary-color: #64b5f6; /* Lighter Sky Blue Accent */
+    --text-color: #37474f; /* Dark Slate Gray */
+    --muted-color: #78909c;
+    --light-bg: #f7f9fc; /* Very light background for pages */
+    --card-bg: white;
+    --border-color: #cfd8dc;
+    --dark-overlay: rgba(0, 0, 0, 0.45);
 }
 
-.site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* ... keep the rest of your global CSS (body, *, .container) ... */
 
-.brand {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    color: var(--secondary-color);
-}
 
 /* =======================================
    HOMEPAGE SPECIFIC STYLES
@@ -38,6 +19,7 @@
 
 /* --- Header on Homepage (Transparent, absolute position) --- */
 .header-home {
+    /* Critical: Position the header over the hero section */
     position: absolute; 
     width: 100%;
     z-index: 1000;
@@ -49,6 +31,7 @@
 }
 
 .header-home .container {
+    /* Critical: Ensures logo is LEFT, links are RIGHT */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +42,8 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
+    /* Move logo to left */
+    margin-right: auto; 
 }
 
 .nav-home a {
@@ -77,8 +62,9 @@
 /* Full-Screen Hero for Dramatic Landing */
 .hero-section {
     height: 100vh; 
+    /* The centering is for the hero-content only, NOT the header */
     display: flex;
-    flex-direction: column; /* Allows content and header to stack vertically */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -87,7 +73,7 @@
     background: url('your-hero-image.jpg') center/cover no-repeat; 
     background-color: var(--primary-color); 
     position: relative;
-    overflow: hidden; /* Prevents overflow issues */
+    overflow: hidden; 
 }
 
 /* Ensure the hero content centers properly over the background */
@@ -96,8 +82,8 @@
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
-    /* Pushes the content down below the fixed header */
-    margin-top: 60px; 
+    /* Add padding to account for the absolutely positioned header above it */
+    padding-top: 100px; 
 }
 
-/* ... (Keep the rest of the Hero CSS for .hero-tagline, .cta-button, etc.) ... */
+/* ... keep the rest of the homepage specific styles ... */
