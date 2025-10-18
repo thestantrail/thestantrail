@@ -1,13 +1,13 @@
-/* Import Fonts: Montserrat (for bold/clean) & Playfair Display (for elegant titles) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); /* For the log tables */
+/* Import Fonts: Playfair Display (Titles), Montserrat (Body/Nav), Inter (Data/Log) */
+@import url('https://fonts.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
     --primary-color: #0077b6; /* Deep Ocean Blue */
-    --secondary-color: #00b4d8; /* Bright Blue */
+    --secondary-color: #00b4d8; /* Bright Blue Accent */
     --text-color: #1e1e1e;
     --muted-color: #6c757d;
-    --light-bg: #f5f7fa;
+    --light-bg: #f5f7fa; /* Light background for pages */
     --card-bg: white;
     --border-color: #e9ecef;
     --dark-overlay: rgba(0, 0, 0, 0.45);
@@ -27,31 +27,44 @@ body {
     min-height: 100vh;
 }
 
-/* -------------------- HOME PAGE: HEADER & NAV -------------------- */
-.header {
+.container {
+    /* Ensures page fits within any screen size gracefully */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* =======================================
+   GLOBAL & HEADER (For all pages)
+   ======================================= */
+.site-header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    position: absolute; 
-    width: 100%;
-    z-index: 1000;
-    color: white; 
-    background: transparent; /* Transparent header over the hero */
 }
 
-.logo {
-    font-family: 'Montserrat', sans-serif;
+.brand {
+    color: white;
+    text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.brand::first-letter {
+    color: var(--secondary-color);
 }
 
 .nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -59,19 +72,23 @@ body {
     color: var(--secondary-color);
 }
 
-/* -------------------- HOME PAGE: HERO SECTION -------------------- */
+/* =======================================
+   HOMEPAGE SPECIFIC STYLES
+   ======================================= */
+
+/* Full-Screen Hero for Dramatic Landing */
 .hero-section {
-    position: relative;
     height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    
-    /* REMEMBER TO CHANGE 'your-hero-image.jpg' */
-    background: var(--dark-overlay), url('your-hero-image.jpg') center/cover no-repeat; 
-    background-color: var(--primary-color); /* Fallback color */
+    /* You must replace 'your-hero-image.jpg' with a real image path */
+    background: url('your-hero-image.jpg') center/cover no-repeat; 
+    background-color: var(--primary-color); 
+    position: relative;
+    padding-top: 60px; /* Space for the fixed header */
 }
 
 .hero-section::before {
@@ -101,7 +118,6 @@ body {
 }
 
 .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
     margin-bottom: 40px;
     font-weight: 400;
@@ -112,7 +128,6 @@ body {
     background-color: var(--secondary-color);
     color: white;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     padding: 15px 30px;
     border-radius: 5px;
@@ -126,7 +141,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* -------------------- FEATURED SECTION (Card on Homepage) -------------------- */
+/* Featured Trip Card */
 .featured-trip-section {
     padding: 80px 5%;
     background-color: var(--light-bg);
@@ -143,7 +158,6 @@ body {
 }
 
 .section-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -152,6 +166,7 @@ body {
 }
 
 .trip-title {
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -159,10 +174,9 @@ body {
 }
 
 .trip-description {
-    font-family: serif;
     font-size: 1.1rem;
     margin-bottom: 25px;
-    color: #6c757d;
+    color: var(--muted-color);
 }
 
 .trip-button {
@@ -171,33 +185,86 @@ body {
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: background-color 0.3s;
 }
 
-/* -------------------- TRIP PAGE: LOG SPECIFIC STYLES -------------------- */
+.trip-button:hover {
+    background-color: var(--secondary-color);
+}
 
-h1, h2 {
-    font-family: 'Playfair Display', serif; /* Use elegant font for titles */
+/* =======================================
+   TRIP LOG SPECIFIC STYLES (for Child Page)
+   ======================================= */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
 h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
-    color: var(--primary-color);
+    color: var(--primary-color); 
+    margin-top: 0;
+    margin-bottom: 15px;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 8px;
 }
 
+.muted {
+    color: var(--muted-color);
+    font-size: 1rem;
+}
+
+/* Itinerary Summary Block (Flag Row) */
+.itinerary-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.summary-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+}
+
+/* Data Table Styling (The Log) */
 .log {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Inter', sans-serif; /* Cleaner font for data */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    table-layout: fixed; /* Ensures column width is controlled and prevents overflow */
 }
 
 .log thead th {
     background-color: var(--light-bg);
+    color: var(--text-color);
     padding: 12px 10px;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 .log tbody tr {
@@ -207,19 +274,28 @@ h2 {
 .log tbody td {
     padding: 12px 10px;
     vertical-align: top;
+    word-wrap: break-word; /* Prevents long text from overflowing the column */
 }
 
 .log tbody tr td:first-child {
     font-weight: 600;
     color: var(--primary-color);
+    width: 30%; /* Gives time column a fixed width */
 }
 
-/* -------------------- FOOTER -------------------- */
-.footer {
-    padding: 20px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    color: #999;
+.log tbody tr td:nth-child(2) {
+    width: 70%; /* Gives location column the rest of the space */
+}
+
+.log tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+/* Footer */
+.site-footer {
     background-color: #343a40;
+    color: #bdbdbd;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
 }
