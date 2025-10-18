@@ -1,0 +1,10 @@
+/* Custom Fonts for Headers and Body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, .display-3 {
+    font-family: 'Playfair Display', serif;
+}
