@@ -2,10 +2,7 @@
 
 **Timeline/Route:**
 
-* [Chicago](,) - Weather: 78 Degrees
-* [](,) - Weather: 
-* [](,) - Weather: 
-* [](,) - Weather: 
+* [](40.462444,-88.966536)
 
 ---
 
