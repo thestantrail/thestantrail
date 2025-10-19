@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About The Stan Trail</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/custom-fonts.css"> 
+</head>
+
+<body data-bs-theme="dark" class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container-fluid container">
+            <a class="navbar-brand text-info fw-bold" href="/">The Stan Trail</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trips.html">Trips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+
+                <header class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-info">About The Stan Trail</h1>
+                    <p class="lead text-light opacity-75 mt-3">
+                        More than just a travel log. It is **A compass for the soul, not just the feet.**
+                    </p>
+                </header>
+
+                <section class="card p-4 shadow-lg border-0 bg-secondary-subtle mb-4 text-light">
+                    <h2 class="card-title fw-bold text-white mb-3">The Purpose Behind the Miles</h2>
+                    <p>
+                        I’ve been fortunate enough to explore many corners of the world — not chasing destinations, but **searching for meaning**. Each trip has been personal, a quiet pursuit of new perspectives and experiences that continue to shape who I am.
+                    </p>
+                </section>
+
+                <section class="card p-4 shadow-lg border-0 bg-secondary-subtle mb-4 text-light">
+                    <h2 class="card-title fw-bold text-white mb-3">Lessons from the World</h2>
+                    <p>
+                        Along the way, I’ve met incredible people whose stories, cultures, and ways of life have influenced me more than I could have imagined. Seeing how differently people live — yet how much we share in common — has taught me **patience, gratitude, and a deeper sense of connection** to the world around me.
+                    </p>
+                </section>
+
+                <section class="card p-4 shadow-lg border-0 bg-secondary-subtle mb-4 text-light">
+                    <h2 class="card-title fw-bold text-white mb-3">Bringing Memories to Life</h2>
+                    <p>
+                        For years, the miles I traveled existed only in memory — moments that faded a little more with time. **This year, I wanted to bring them together in one place.** The Stan Trail is my way of keeping those journeys alive — a space to reflect, to share, and to remember the people and places that continue to shape my story.
+                    </p>
+                    <p class="mt-3 fst-italic border-top border-secondary pt-3">
+                        This isn’t just a travel log. It’s a reminder that every path we take, every person we meet, and every sunrise we chase adds something meaningful to who we are.
+                    </p>
+                </section>
+
+                <div class="text-center mt-5">
+                    <h3 class="fw-bold text-white">Explore the Chronicles</h3>
+                    <a href="/trips.html" class="btn btn-info btn-lg mt-3 shadow-sm">View All Trip Logs</a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    
+    <footer class="bg-dark py-3 mt-5 border-top border-secondary">
+        <div class="container text-center text-muted">
+            <small>© <span id="y"></span> The Stan Trail. Traverse the world.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
